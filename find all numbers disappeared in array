@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {4,3,2,7,8,2,3,1};
+        System.out.println(findNumbers(arr));
+    }
+    public static List<Integer> findNumbers(int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0 ; i < arr.length ; i++){
+            int index = Math.abs(arr[i]) - 1;
+
+            if(arr[index] < 0){
+
+            }
+            else{
+                arr[index] *= -1;
+            }
+        }
+
+        for(int i = 0 ; i < arr.length  ; i++){
+            if(arr[i] > 0){
+                list.add(i+1);
+            }
+        }
+
+        return list;
+    }
+}
