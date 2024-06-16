@@ -125,7 +125,7 @@ class Solution {
         
     }
 }
-// third maximum number
+//3.THIRD MAXIMUM ELEMENT IN ARRAY
 class Solution
 {
     int thirdLargest(int[] arr, int n)
@@ -160,6 +160,7 @@ class Solution
         
     }
 }
+//4.IS ARRAY IS SORTED AND ROTATED
 
 
 
