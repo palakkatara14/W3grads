@@ -1,0 +1,44 @@
+class Solution
+{
+    
+    static ArrayList<Integer> subarraySum(int[] arr, int n, int s) 
+    {
+        int start = 0;
+        int end = 0;
+        boolean flag=false;
+        int currsum=0;
+        ArrayList<Integer> ls = new ArrayList<Integer>();
+        
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            
+            currsum=currsum+arr[i];
+            if(currsum>=s){
+                end=i;
+                
+                while(s<currsum && start<end){
+                    
+                    currsum= currsum-arr[start];
+                    start++;
+                }
+                
+                
+                if(currsum==s){
+                    ls.add(start + 1);//store starting and ending index for subaaray
+                    ls.add(end + 1);
+                    
+                    
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        
+        if (flag==false) {
+            ls.add(-1);
+        } 
+       
+        return ls;    
+    }
+}
