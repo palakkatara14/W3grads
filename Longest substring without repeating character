@@ -1,0 +1,32 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        //256 ka array bnaenege
+        //sliding window grow shrink left right
+        //jb conditon glt toh shrink
+        int max_Index=0;//grow
+        int start=0;
+        int end=0;
+        int[] arr=new int[256];
+        for(end=0;end<s.length();end++){
+            int index=s.charAt(end);
+            arr[index]++;
+            //shrink
+            while(arr[index]==2){
+                     int r_Index=s.charAt(start);
+                     arr[r_Index]--;
+                     start++;
+            }
+            //task current window
+             int curr=end-start+1;
+             max_Index=Math.max(max_Index,curr);
+        }
+         return max_Index;
+
+            
+        
+        
+        
+
+    }
+   
+}
