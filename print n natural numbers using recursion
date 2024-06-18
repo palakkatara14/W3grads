@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        
+        System.out.println(print_n_natural_numbers(n));
+    }
+    public static int print_n_natural_numbers(int n){
+       
+        if(n==0){
+          return 0;
+        }
+        System.out.println(n+" ");
+        return  print_n_natural_numbers(n - 1);
+        
+        
+    }
+    
+}
