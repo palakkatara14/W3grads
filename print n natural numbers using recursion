@@ -12,8 +12,15 @@ public class Main{
         if(n==0){
           return 0;
         }
+        if(n==1){
+            return 1;
+        }
+        
+        
         System.out.println(n+" ");
         return  print_n_natural_numbers(n - 1);
+        
+        
         
         
     }
