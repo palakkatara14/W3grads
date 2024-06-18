@@ -103,17 +103,39 @@ public class Main{
 5.//LCM AND GCD
 class Solution {
     static Long[] lcmAndGcd(Long A , Long B) {
+        
         Long gcd = gcd(A, B);
+        
         Long lcm = (A / gcd) * B;
+        
         return new Long[]{lcm, gcd};
     }
-    
-    static Long gcd(Long a, Long b) {
-        if (b == 0)
+
+    static Long gcd(Long a, Long b){
+        
+        while(a>0 && b>0) {
+            
+            if(a > b) {
+                
+                a %= b;
+            }
+            
+            else {
+                
+                b %= a;
+            }
+        }
+        
+        if(a == 0) {
+            return b;
+        }
+       
+        else{
             return a;
-        return gcd(b, a % b);
+        }
     }
 }
+
 //6.GAME WITH INTEGERS 1889
 import java.util.*;
 public class Main{
