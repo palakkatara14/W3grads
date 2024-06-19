@@ -1,0 +1,24 @@
+class Solution {
+    static String [] arr={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    public List<String> letterCombinations(String digits) {
+        List<String>list = new ArrayList<>();
+         if(digits.length()==0){
+             return list;
+         }
+        print(digits,list,"");
+        return list;
+        
+    }
+   public static void print(String digits,List<String>list,String ans){
+       if(digits.length()==0){
+           
+            list.add(ans);
+           return;
+       }
+       int dig =digits.charAt(0)-'0';//50-48=2
+       String curr=arr[dig];
+       for(int i=0;i<curr.length();i++){
+           print(digits.substring(1),list,ans+curr.charAt(i));
+       }
+   }
+}
