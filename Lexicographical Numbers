@@ -1,0 +1,22 @@
+class Solution {
+    public void print(int n,int ans,List<Integer> ls){
+        if(ans>n){
+            return;
+        }
+
+        int i=0;
+        if(ans==0) i=1;
+
+        if(ans>0)
+        ls.add(ans);
+
+        for(;i<=9; i++){
+            print(n,ans*10+i,ls);
+        }
+    }
+    public List<Integer> lexicalOrder(int n) {
+        List<Integer> ls=new ArrayList<>();
+       print(n,0,ls);
+        return ls;
+    }
+}
