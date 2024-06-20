@@ -222,9 +222,23 @@ public class Main{
     }
 }
 //9.Minimum insertions to make a co-prime array
-public class Main {
-    static boolean isCoPrime(int a,int b){
-        int hcf=1;
+class Solution{
+    int countCoPrime(int a[], int n)
+    {   
+        int count=0;
+        for(int i=0;i<a.length-1;i++){
+            int ans=gcd(a[i],a[i+1]);
+            if(ans!=1){
+                count++;
+            }
+            
+        }
+        return count;
+        
+    
+    }
+    
+    int gcd(int a,int b){
         while(a>0 && b>0){
             if(a>b){
                 a=a%b;
@@ -234,29 +248,18 @@ public class Main {
             }
         }
         if(a==0){
-            hcf=b;
+            return b;
         }
         else{
-            hcf=a;
+            return a;
         }
         
-        return (hcf==1)?true:false;
     }
-    
-    
-    int countCoPrime(int a[], int n)
-    {
-       int insert=0;
-       for(int i=0;i<=a.length-2;i++){
-           int A=a[i];
-           int B=a[i+1];
-           if(!isCoPrime(A,B)){
-               insert++;
-           }
-       }
-       return insert;
-    }    
+   
 }
+    
+    
+    
 //10.Smallest number divisible by n and has at-least k trailing zeros.
 public class Main{
     static long GCD(long a,long b){
