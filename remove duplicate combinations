@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int cars=sc.nextInt();
+        
+        boolean[] arr=new boolean[5];
+        
+        print(cars,2,0,"",arr,1);
+    }
+    static void print(int cars,int n,int p,String ans,boolean[] arr,int j){
+        if(p==n){
+            System.out.println(ans);
+            return;
+        }
+        for(int i=j;i<=4;i++){
+            if(arr[i]==false){
+                arr[i]=true;
+                print(cars,n,p+1,ans+"c"+i+" "+p,arr,i+1);
+                arr[i]=false;
+            }
+        }
+    }
+}
