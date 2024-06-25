@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] arr1={1,2,3,4};
+	    int[] arr2={1,2,6};
+	    int[] arr=new int[arr1.length+arr2.length];
+	    int i=0;
+	    int j=0;
+	    for(int k=0;k<arr.length;k++){
+	        if(j==arr2.length){
+	            arr[k]=arr1[i];
+	            i++;
+	            continue;
+	        }
+	        if(i==arr1.length){
+	            arr[k]=arr2[j];
+	            j++;
+	            continue;
+	        }
+	        if(arr1[i]<=arr2[j]){
+	            arr[k]=arr1[i];
+	            i++;
+	        }
+	        else{
+	            arr[k]=arr2[j];
+	            j++;
+	        }
+	    }
+	    System.out.println(Arrays.toString(arr));
+	    
+	    
+	}
+}
