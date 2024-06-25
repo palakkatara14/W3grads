@@ -1,0 +1,38 @@
+class Solution {
+    public List<List<String>> partition(String s) {
+        List<List<String>> ans=new ArrayList<>();
+        List<String> ls=new ArrayList<>();
+        palindrome(s,ans,ls);
+        return ans;
+
+    }
+   public boolean isPalindrome(String str){
+        int start=0;
+        int end=str.length()-1;
+        while(start<end){
+           if(str.charAt(start)!=str.charAt(end)){
+            return false;
+
+           }
+           start++;
+           end--;
+        }
+        return true;
+
+    }
+     public void palindrome(String s, List<List<String>> ans,List<String> ls){
+        if(s.length()==0){
+           ans.add(new ArrayList<>(ls));
+            return;
+        }
+        for(int i=1;i<=s.length();i++){
+            String partition=s.substring(0,i);
+            String remain=s.substring(i);
+            if(isPalindrome(partition)){
+                ls.add(partition);
+                palindrome(remain,ans,ls);
+                ls.remove(ls.size()-1);
+            }
+        }
+    }
+}
