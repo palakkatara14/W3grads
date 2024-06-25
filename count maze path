@@ -1,6 +1,6 @@
 import java.util.*;
 public class Main{
-    public static int countPaths(int i,int j,int n,int m){
+    public static int countPaths(int i,int j,int n,int m,String ans){
         if(i==n || j==m){
             return 0;
         }
@@ -8,16 +8,16 @@ public class Main{
             return 1;
         }
         //move downwards
-        int downPaths=countPaths(i+1,j,n,m);
+        int downPaths=countPaths(i+1,j,n,m,ans+"D");
         //move rightwards
-        int rightPaths=countPaths(i,j+1,n,m);
+        int rightPaths=countPaths(i,j+1,n,m,ans+"R");
         return downPaths+rightPaths;
     }
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         int m=sc.nextInt();
-        int totalPaths=countPaths(0,0,n,m);
+        int totalPaths=countPaths(0,0,n,m,"");
         System.out.println(totalPaths);
     }
     
