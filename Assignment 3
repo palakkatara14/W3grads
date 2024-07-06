@@ -1,0 +1,123 @@
+1://Sum of n natural numbers using recursion
+
+class Solution {
+    public int find(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return n + find(n - 1);
+    }
+}
+2://Power of Two
+    public boolean isPowerOfTwo(int n) {
+        if(n==0){
+            return false;
+        }
+        while(n%2==0){
+            n/=2;
+        }
+        if(n==1){
+            return true;
+        }
+        return false;
+        
+
+    }
+    
+}
+3://Power of three
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if(n<=0){
+            return false;
+        }
+        while(n%3==0){
+            n/=3;
+        }
+        if(n==1){
+            return true;
+        }
+        return false;
+        
+
+    }
+    
+}
+4://Geek-onacci Number
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+
+public class GFG {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while (t-- > 0) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int n = sc.nextInt();
+            int result = find(a, b, c, n);
+            System.out.println(result);
+        }
+    }
+
+    static int find(int a, int b, int c, int n) {
+        if (n == 1) {
+            return a;
+        } 
+        else if (n == 2) {
+            return b;
+        } 
+        else if (n == 3) {
+            return c;
+        }
+        return find(a, b, c, n - 1) + find(a, b, c, n - 2) + find(a, b, c, n - 3);
+    }
+}
+5://first uppercase letter in a string (iterative and recursive)
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(Character.isUpperCase(ch)){
+                System.out.println(ch+" ");
+            }
+        }
+        
+        
+    }
+6://Power of four
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        if(n==0){
+            return false;
+        }
+        while(n%4==0){
+            n/=4;
+        }
+        if(n==1){
+            return true;
+        }
+        return false;
+        
+
+    }
+    
+}
+7://Power of(x,n)
+class Solution {
+    public double myPow(double x, int n) {
+        double c = Math.pow(x,n);
+        return c;
+        
+    }
+}
+    
+}
+8://
